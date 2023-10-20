@@ -32,4 +32,9 @@ public class WebNoteDAO {
         webNote.setId(++NOTE_COUNT);
         notes.add(webNote);
     }
+
+    public void update(int id, WebNote updateWebNote) {
+        WebNote toUpdateNote = show(id);
+        toUpdateNote.setNote(updateWebNote.getNote());
+    }
 }

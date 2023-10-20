@@ -46,4 +46,15 @@ public class NotesController {
         webNoteDAO.save(webNote);
         return "redirect:/notes";
     }
+
+    @GetMapping("/{id}/edit")
+    public String edit(Model model, @PathVariable("id") int id) {
+        model.addAttribute("webNote", webNoteDAO.show(id));
+        return "/notes/edit";
+    }
+    @PatchMapping("/{id}")
+    public String update(@ModelAttribute("webNote") WebNote webNote,@PathVariable("id") int id){
+        webNoteDAO.update(id, webNote);
+        return "redirect:/notes";
+    }
 }

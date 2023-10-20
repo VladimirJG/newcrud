@@ -8,6 +8,6 @@
 
 <p th:text="${note.getNote()}">NOTE</p>
 <p th:text="${note.getId()}">ID</p>
-
+<a th:href="@{/notes/{id}/edit(id=${note.getId()})}">Edit</a>
 </body>
 </html>
