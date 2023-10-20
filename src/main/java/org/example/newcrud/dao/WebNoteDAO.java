@@ -27,4 +27,9 @@ public class WebNoteDAO {
     public WebNote show(int id) {
         return notes.stream().filter(n -> n.getId() == id).findAny().orElse(null);
     }
+
+    public void save(WebNote webNote) {
+        webNote.setId(++NOTE_COUNT);
+        notes.add(webNote);
+    }
 }

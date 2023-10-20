@@ -9,6 +9,9 @@ public class WebNote {
         this.note = note;
     }
 
+    public WebNote() {
+    }
+
     public int getId() {
         return id;
     }

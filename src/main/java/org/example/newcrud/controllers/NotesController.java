@@ -29,10 +29,21 @@ public class NotesController {
         return "/notes/show";
     }
 
-    @PatchMapping
-    public String create(@RequestParam("note") String note, Model model) {
-        WebNote webNote = new WebNote();
-        webNote.setNote(note);
-        return "successPage";
+    /* @PatchMapping
+     public String create(@RequestParam("note") String note, Model model) {
+         WebNote webNote = new WebNote();
+         webNote.setNote(note);
+         return "successPage";
+     }*/
+    @GetMapping("/new")
+    public String newNote(Model model) {
+        model.addAttribute("webNote", new WebNote());
+        return "/notes/new";
+    }
+
+    @PostMapping
+    public String create(@ModelAttribute("webNote") WebNote webNote) {
+        webNoteDAO.save(webNote);
+        return "redirect:/notes";
     }
 }
