@@ -1,12 +1,11 @@
 package org.example.newcrud.controllers;
 
 import org.example.newcrud.dao.WebNoteDAO;
+import org.example.newcrud.models.WebNote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/notes")
@@ -28,5 +27,12 @@ public class NotesController {
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("note", webNoteDAO.show(id));
         return "/notes/show";
+    }
+
+    @PatchMapping
+    public String create(@RequestParam("note") String note, Model model) {
+        WebNote webNote = new WebNote();
+        webNote.setNote(note);
+        return "successPage";
     }
 }
