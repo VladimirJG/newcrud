@@ -21,12 +21,12 @@ public class NotesController {
     @GetMapping
     public String index(Model model) {
         model.addAttribute("notes", webNoteDAO.index());
-        return "notes/index";
+        return "/notes/index";
     }
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("note", webNoteDAO.show(id));
-        return "notes/show";
+        return "/notes/show";
     }
 }
