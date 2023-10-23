@@ -12,12 +12,12 @@ public class WebNoteDAO {
     private List<WebNote> notes;
 
     public WebNoteDAO() {
-        notes = new ArrayList<WebNote>();
-        notes.add(new WebNote(++NOTE_COUNT, "test1"));
-        notes.add(new WebNote(++NOTE_COUNT, "test2"));
-        notes.add(new WebNote(++NOTE_COUNT, "test3"));
-        notes.add(new WebNote(++NOTE_COUNT, "test4"));
-        notes.add(new WebNote(++NOTE_COUNT, "test5"));
+        notes = new ArrayList<>();
+        notes.add(new WebNote(++NOTE_COUNT, "Note 1"));
+        notes.add(new WebNote(++NOTE_COUNT, "Note 2"));
+        notes.add(new WebNote(++NOTE_COUNT, "Note 3"));
+        notes.add(new WebNote(++NOTE_COUNT, "Note 4"));
+        notes.add(new WebNote(++NOTE_COUNT, "Note 5"));
     }
 
     public List<WebNote> index() {
