@@ -37,4 +37,8 @@ public class WebNoteDAO {
         WebNote toUpdateNote = show(id);
         toUpdateNote.setNote(updateWebNote.getNote());
     }
+
+    public void delete(int id) {
+        notes.removeIf(n -> n.getId() == id);
+    }
 }

@@ -52,9 +52,16 @@ public class NotesController {
         model.addAttribute("webNote", webNoteDAO.show(id));
         return "/notes/edit";
     }
+
     @PatchMapping("/{id}")
-    public String update(@ModelAttribute("webNote") WebNote webNote,@PathVariable("id") int id){
+    public String update(@ModelAttribute("webNote") WebNote webNote, @PathVariable("id") int id) {
         webNoteDAO.update(id, webNote);
+        return "redirect:/notes";
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") int id) {
+        webNoteDAO.delete(id);
         return "redirect:/notes";
     }
 }

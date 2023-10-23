@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org/" >
+<html xmlns:th="https://www.thymeleaf.org/"  lang="en">
 <head>
     <meta charset="UTF-8">
     <title>All notes</title>
@@ -10,6 +10,10 @@
     <a th:href="@{/notes/{id} (id=${note.getId()})}"
        th:text="${note.getNote()}">note</a>
 </div>
+<br/>
+<hr/>
+
+<a href="notes/new">New note</a>
 
 </body>
 </html>
