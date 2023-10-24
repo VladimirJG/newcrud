@@ -6,11 +6,11 @@
 </head>
 <body>
 
-<p th:text="${note.getNote()}">NOTE</p>
-<p th:text="${note.getId()}">ID</p>
-<a th:href="@{/notes/{id}/edit(id=${note.getId()})}">Edit</a>
-<form th:method="DELETE" th:action="@{/notes/{id}(id=${note.getId()})}">
-    <input type="submit" value="Delete">
+<p th:text="${note.getNote()}">NOTE</p> <!--получаем элемент-->
+<p th:text="${note.getId()}">ID</p> <!--получаем id элемента-->
+<a th:href="@{/notes/{id}/edit(id=${note.getId()})}">Edit</a> <!--ссылка на страницу элемента по id-->
+<form th:method="DELETE" th:action="@{/notes/{id}(id=${note.getId()})}"> <!--удаление элемента по кнопке Delete(кнопка по форме)-->
+    <input type="submit" value="Delete"> <!--сама кнопка-->
 </form>
 </body>
 </html>

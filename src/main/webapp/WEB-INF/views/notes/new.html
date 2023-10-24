@@ -5,11 +5,11 @@
     <title>new Note</title>
 </head>
 <body>
-<form th:method="POST" th:action="@{/notes}" th:object="${webNote}">
-    <label for="note">Enter note:</label>
-    <input type="text" th:field="*{note}" id="note"/>
+<form th:method="POST" th:action="@{/notes}" th:object="${webNote}"> <!--создаем форму добавления элемента-->
+    <label for="note">Enter note:</label> <!--графа ввода информации в новый  элемент (не в ID)-->
+    <input type="text" th:field="*{note}" id="note"/> <!--ввод изменений-->
     <br/>
-    <input type="submit" value="Add note"/>
+    <input type="submit" value="Add note"/> <!--кнопка-->
 </form>
 </body>
 </html>

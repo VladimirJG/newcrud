@@ -11,6 +11,7 @@ public class WebNoteDAO {
     private static int NOTE_COUNT;
     private List<WebNote> notes;
 
+    //создание списка(ArrayList)
     public WebNoteDAO() {
         notes = new ArrayList<>();
         notes.add(new WebNote(++NOTE_COUNT, "Note 1"));
@@ -20,24 +21,29 @@ public class WebNoteDAO {
         notes.add(new WebNote(++NOTE_COUNT, "Note 5"));
     }
 
+    // вывод всего списка на страницу
     public List<WebNote> index() {
         return notes;
     }
 
+    // вывод/переход на страницу элемента по id либо null
     public WebNote show(int id) {
         return notes.stream().filter(n -> n.getId() == id).findAny().orElse(null);
     }
 
+    // сохранение нового элемента
     public void save(WebNote webNote) {
-        webNote.setId(++NOTE_COUNT);
-        notes.add(webNote);
+        webNote.setId(++NOTE_COUNT); //добавление id
+        notes.add(webNote); /*добавление элемента в списук существующих*/
     }
 
+    // изменение существующего элемента
     public void update(int id, WebNote updateWebNote) {
         WebNote toUpdateNote = show(id);
         toUpdateNote.setNote(updateWebNote.getNote());
     }
 
+    //удаление элемента
     public void delete(int id) {
         notes.removeIf(n -> n.getId() == id);
     }

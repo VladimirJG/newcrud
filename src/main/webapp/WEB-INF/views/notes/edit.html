@@ -5,12 +5,13 @@
     <title>Update note</title>
 </head>
 <body>
+<!--форма изменения элемента-->
 <form th:method="PATCH" th:action="@{/notes{id}(id=${webNote.getId()})}"
       th:object="${webNote}">
-    <label for="note">Enter note:</label>
+    <label for="note">Enter note:</label> <!--графа ввода-->
     <input type="text" th:field="*{note}" id="note">
     <br/>
-    <input type="submit" value="Update note">
+    <input type="submit" value="Update note"><!-- кнопка -->
 </form>
 </body>
 </html>

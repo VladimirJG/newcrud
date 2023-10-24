@@ -6,9 +6,9 @@
 </head>
 <body>
 
-<div th:each="note:${notes}">
+<div th:each="note:${notes}"> <!--получаем список элементов - итерируем-->
     <a th:href="@{/notes/{id} (id=${note.getId()})}"
-       th:text="${note.getNote()}">note</a>
+       th:text="${note.getNote()}">note</a> <!--по id элемента в цикле (10 строка) выводим сам элемент в цикле (11 строка)-->
 </div>
 <br/>
 <hr/>
